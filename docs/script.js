@@ -57,9 +57,7 @@ function formatSrDate(input) {
 // Parsiranje CSV fajla
 function parseCSV(csvText) {
     return csvText.trim().split('\n').map(line => {
-	console.log(line);
         const [sifra,predmet,broj_studenata,dan,sat,katedra,grupa,semestar,akreditacija,racunari,ispravan_semestar,smerovi,lokacija] = line.split(',');
-	console.log(dan, sat)
         return {
             grupa: grupa.trim() + " (" + akreditacija.trim() + ")",
             predmet: predmet.trim() + (smerovi ? (" (" + smerovi.split("").map(x => "М"+x).join(", ") + ")") : ""),
@@ -248,7 +246,7 @@ function porediTermine(a, b) {
 }
 
 // Glavni deo
-fetch('raspored-2026.02.csv')
+fetch('raspored-2026.02.csv?date=' + new Date().toISOString())
   .then(response => response.text())
   .then(text => {
     const sviIspiti = parseCSV(text);
