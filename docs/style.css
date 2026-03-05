@@ -1,0 +1,61 @@
+body {
+  font-family: sans-serif;
+  margin: 2em;
+  background-color: #fafafa;
+}
+
+h1 {
+  color: #333;
+}
+
+.filters {
+  margin-bottom: 1em;
+}
+
+label {
+  margin-right: 1em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+#kalendar table {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#kalendar th,
+#kalendar td {
+  width: calc(100% / 7);
+  vertical-align: top;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+
+#kalendar td.u-roku {
+  background: #fff3cd;   /* svetlo žuto */
+}
+
+.jesenji {
+    color: #770000;
+}
+
+.prolecni {
+    color: #000077;
+}

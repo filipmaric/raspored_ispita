@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Распоред испита</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Распоред испита у року Јануар 2, 2026. године</h1>
+
+  <div class="filters">
+    <label>Група (акредитација):
+      <select id="grupa">
+        <option value="">(све групе)</option>
+      </select>
+    </label>
+
+    <label>Термин:
+      <select id="termin">
+        <option value="">(сви термини)</option>
+      </select>
+    </label>
+
+    <label>Локација:
+      <select id="lokacija">
+        <option value="">(све локације)</option>
+      </select>
+    </label>
+    
+    <input type="text" id="predmet" placeholder="Филтрирај по предмету..." />
+    
+  </div>
+
+  <div id="kalendar"></div>
+
+  <ul>
+    <li><span class='jesenji'>Испити из јесењег семестра</span>
+    <li><span class='prolecni'>Испити из пролећног семестра</span>
+  </ul>
+
+  <table id="tabela">
+    <thead>
+      <tr>
+        <th>Група</th>
+        <th>Испит</th>
+        <th>Укупно уписаних</th>
+        <th>Семестар</th>
+        <th>Термин</th>
+	<th>Локација</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
