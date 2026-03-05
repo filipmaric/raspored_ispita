@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://enastava.matf.bg.ac.rs/~raspored/dezurstva/ -->
+<html lang="sr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Преглед дежурстава за фебруар 2026.</title>
+<style>
+h2,h3 { text-align: center; }
+body { font-family: Arial, sans-serif; }
+table { border-collapse: collapse; width: 80%; margin: auto; }
+th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+th { background: #eee; }
+tr.main-row { cursor: pointer; }
+tr.detail-row { display: none; background: #f9f9f9; }
+.racunari { color: red; }
+.bez_racunara { color: blue; }
+.asistenti { color: black; }
+</style>
+<script>
+function toggle(id) {
+    var row = document.getElementById(id);
+    row.style.display = (row.style.display === "table-row") ? "none" : "table-row";
+}
+
+let sortDir = [1,1,1,1,1];
+
+function sortTable(colIndex) {
+    const table = document.querySelector("table");
+    const rows = Array.from(table.querySelectorAll("tr.main-row"));
+
+    sortDir[colIndex] *= -1;
+    const dir = sortDir[colIndex];
+
+    rows.sort((a, b) => {
+        const aVal = parseInt(a.children[colIndex].textContent);
+        const bVal = parseInt(b.children[colIndex].textContent);
+        return (aVal - bVal) * dir;
+    });
+
+    for (const mainRow of rows) {
+        const detailRow = mainRow.nextElementSibling;
+        table.appendChild(mainRow);
+        table.appendChild(detailRow);
+    }
+}
+</script>
+</head>
+<body>
+
+<h2>Број пријављених студената и дежурних по терминима - фебруар 2026.</h2>
+<table>
+<tbody><tr>
+    <th style="width:100px">Датум</th>
+    <th>Сат</th>
+    <th onclick="sortTable(2)" style="cursor:pointer">Укупно студената</th>
+    <th onclick="sortTable(3)" style="cursor:pointer">Студената (без рачунара)</th>
+    <th onclick="sortTable(4)" style="cursor:pointer">Студената (за рачунарима)</th>
+    <th>Дежурни (без рачунара)</th>
+    <th>Дежурни (за рачунарима)</th>
+    <th>Помоћни дежурни</th>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d0&#39;)">
+    <td>5. 3. 2026.</td>
+    <td>9h</td>
+    <td>132</td>
+    <td>28</td>
+    <td>104</td>
+    <td><ol><li>Никола Вучић</li><li>Кристина Ивановић</li></ol></td>
+    <td><ol><li>Андрија Урошевић</li><li>Страхиња Станојевић</li><li>Јована Костић</li><li>Матија Лојовић</li><li>Марија Ристић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d0" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(15-П103) Алгоритми и структуре података: 55 (рачунари)<br><small class="asistenti">Асистенти: Андрија Урошевић, Марија Ристић, Матија Лојовић</small></li><li class="racunari">(П103) Увод у структуре података: 33 (рачунари)<br><small class="asistenti">Асистенти: Андрија Урошевић, Марија Ристић, Матија Лојовић</small></li><li class="bez_racunara">(М5.03) Теорија вероватноћа: 19 (без рачунара)<br><small class="asistenti">Асистенти: Никола Вучић</small></li><li class="racunari">(НР1.01) Увод у алгоритме и структуре података: 12 (рачунари)<br><small class="asistenti">Асистенти: Андрија Урошевић, Страхиња Станојевић</small></li><li class="bez_racunara">(М155) Операциона истраживања: 5 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Савић</i></small></li><li class="racunari">(РМ09) Конструкција и анализа алгоритама: 4 (рачунари)<br><small class="asistenti">Асистенти: Андрија Урошевић, Страхиња Станојевић</small></li><li class="bez_racunara">(М4.141) Линеарно програмирање: 2 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Савић</i></small></li><li class="bez_racunara">(М4.05) Операциона истраживања: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Савић</i></small></li><li class="bez_racunara">(М4.16) Варијациони рачун: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Јовић</i></small></li><li class="">(М4.081) Екстремални проблеми: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Јовић</i></small></li><li class="">(М4.17) Обрада сигнала: 0 (рачунари)<br><small class="asistenti">Асистенти: Јована Костић</small></li><li class="">(М4.11) Теорија апроксимација: 0 (без рачунара)<br><small class="asistenti">Асистенти: Кристина Ивановић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d1&#39;)">
+    <td>5. 3. 2026.</td>
+    <td>13h</td>
+    <td>67</td>
+    <td>67</td>
+    <td>0</td>
+    <td><ol><li>Марко Спасић</li></ol></td>
+    <td><ol></ol></td>
+    <td><ol><li>Винка Дакић</li></ol></td>
+</tr>
+<tr id="d1" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(Р255) Рачунарска графика: 67 (без рачунара)<br><small class="asistenti">Асистенти: Марко Спасић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d2&#39;)">
+    <td>5. 3. 2026.</td>
+    <td>17h</td>
+    <td>102</td>
+    <td>80</td>
+    <td>22</td>
+    <td><ol><li>Матија Миловић</li><li>Павле Касом</li><li>Бојана Јошић</li><li>Димитрије Рађеновић</li><li>Антоније Суботић</li><li>Дара Милојковић</li><li>Роберт Дожа</li></ol></td>
+    <td><ol><li>Роберт Дожа</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d2" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(Р120.1) Дигитални запис података: 31 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Јошић, Дара Милојковић</small></li><li class="bez_racunara">(НРМ03) Рачунарски системи: 18 (без рачунара)<br><small class="asistenti">Асистенти: Роберт Дожа</small></li><li class="bez_racunara">(НМ1.01) Елементарна математика: 17 (без рачунара)<br><small class="asistenti">Асистенти: Антоније Суботић, Матија Миловић, Павле Касом</small></li><li class="racunari">(15-РМ03) Увод у организацију и архитектуру рачунара 1: 11 (рачунари)<br><small class="asistenti">Асистенти: Роберт Дожа</small></li><li class="racunari">(РМ03) Увод у организацију и архитектуру рачунара: 11 (рачунари)<br><small class="asistenti">Асистенти: Роберт Дожа</small></li><li class="bez_racunara">(СПК61) Специјални курс: 6 (без рачунара)<br><small class="asistenti">Асистенти: <i>НАСТАВНИК -</i></small></li><li class="bez_racunara">(НМ1.03) Напредни концепти елементарне математике: 4 (без рачунара)<br><small class="asistenti">Асистенти: <i>Славко Моцоња</i></small></li><li class="bez_racunara">(Р120) Увод у организацију и архитектуру рачунара 1: 3 (без рачунара)<br><small class="asistenti">Асистенти: Дара Милојковић, Димитрије Рађеновић</small></li><li class="bez_racunara">(О1.05) Педагошка пракса 1: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Марек Светлик</i></small></li><li class="">(М7.01) Пракса наставе математике и рачунарства: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Марек Светлик</i></small></li><li class="">(О1.09) Пракса наставе математике и рачунарства: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Марек Светлик</i></small></li><li class="">(О1.07) Педагошка пракса 2: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Марек Светлик</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d3&#39;)">
+    <td>6. 3. 2026.</td>
+    <td>9h</td>
+    <td>122</td>
+    <td>95</td>
+    <td>27</td>
+    <td><ol><li>Марко Тошић</li><li>Кристина Мићић</li><li>Урош Динић</li><li>Ђорђе Коцић</li><li>Милан Павловић</li></ol></td>
+    <td><ol><li>Матија Лојовић</li><li>Милан Митрески</li><li>Милан Коцић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d3" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М133) Примена пројективне геометрије у рачунарству: 56 (без рачунара)<br><small class="asistenti">Асистенти: Милан Павловић</small></li><li class="bez_racunara">(М3.01) Аналитичка геометрија: 24 (без рачунара)<br><small class="asistenti">Асистенти: Ђорђе Коцић, <i>Катарина Лукић</i>, Урош Динић</small></li><li class="racunari">(15-П101) Програмирање 2: 16 (рачунари)<br><small class="asistenti">Асистенти: Милан Коцић, Милан Митрески</small></li><li class="bez_racunara">(15-М3.04) Геометрија 4: 10 (без рачунара)<br><small class="asistenti">Асистенти: Марко Тошић</small></li><li class="racunari">(П101) Увод у алгоритме: 10 (рачунари)<br><small class="asistenti">Асистенти: Матија Лојовић, Милан Коцић, Милан Митрески</small></li><li class="bez_racunara">(15-М3.01) Геометрија 1: 5 (без рачунара)<br><small class="asistenti">Асистенти: Ђорђе Коцић, <i>Катарина Лукић</i>, Кристина Мићић</small></li><li class="racunari">(Р291) Програмирање за веб: 1 (рачунари)<br><small class="asistenti">Асистенти: <i>Дражен Драшковић</i></small></li><li class="">(М3.07) Геометрија 5: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Владица Андрејић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d4&#39;)">
+    <td>6. 3. 2026.</td>
+    <td>13h</td>
+    <td>61</td>
+    <td>28</td>
+    <td>33</td>
+    <td><ol><li>Едвард Габријел Етински</li><li>Урош Динић</li><li>Ђорђе Коцић</li><li>Милан Павловић</li></ol></td>
+    <td><ol><li>Невена Ћирић</li><li>Стефан Капунац</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d4" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(Р274) Истраживање података 1: 33 (рачунари)<br><small class="asistenti">Асистенти: Невена Ћирић, Стефан Капунац</small></li><li class="bez_racunara">(15-М3.03) Геометрија 3: 20 (без рачунара)<br><small class="asistenti">Асистенти: Едвард Габријел Етински, Милан Павловић</small></li><li class="bez_racunara">(М3.03) Геометрија кривих  и површи: 8 (без рачунара)<br><small class="asistenti">Асистенти: Едвард Габријел Етински, Милан Павловић</small></li><li class="">(М4.02) Програмски пакети у математици: 0 (без рачунара)<br><small class="asistenti">Асистенти: Урош Динић</small></li><li class="">(НМ2.03) Нееуклидске геометрије: 0 (без рачунара)<br><small class="asistenti">Асистенти: Ђорђе Коцић</small></li><li class="">(НМ4.01) Геометријско моделовање: 0 (без рачунара)<br><small class="asistenti">Асистенти: Едвард Габријел Етински</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d5&#39;)">
+    <td>6. 3. 2026.</td>
+    <td>17h</td>
+    <td>43</td>
+    <td>6</td>
+    <td>37</td>
+    <td><ol><li>Павле Касом</li><li>Антоније Суботић</li></ol></td>
+    <td><ol><li>Дара Милојковић</li><li>Невена Ћирић</li><li>Ђурђа Милошевић</li><li>Луција Миличић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d5" class="detail-row" style="display: none;">
+    <td colspan="8">
+        <ul><li class="racunari">(Р130) Увод у веб и интернет технологије: 30 (рачунари)<br><small class="asistenti">Асистенти: Ђурђа Милошевић, Луција Миличић</small></li><li class="racunari">(Р309) Увод у биоинформатику: 5 (рачунари)<br><small class="asistenti">Асистенти: Невена Ћирић</small></li><li class="bez_racunara">(М6.03) Топологија Б: 3 (без рачунара)<br><small class="asistenti">Асистенти: Антоније Суботић</small></li><li class="racunari">(РМ07) Веб програмирање: 2 (рачунари)<br><small class="asistenti">Асистенти: Дара Милојковић</small></li><li class="bez_racunara">(М36.1) Одабрана поглавља геометрије и топологије: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Миладиновић</i></small></li><li class="bez_racunara">(М170) Увод у рачунарску топологију: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Миладиновић</i></small></li><li class="bez_racunara">(М4.18) Конвексна анализа: 1 (без рачунара)<br><small class="asistenti">Асистенти: Павле Касом</small></li><li class="">(2М6.02) Одабрана поглавља диференцијалне топологије: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Миладиновић</i></small></li><li class="">(2М6.01) Одабрана поглавља алгебарске топологије: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Миладиновић</i></small></li><li class="">(15-М6.01) Очигледна топологија: 0 (без рачунара)<br><small class="asistenti">Асистенти: Антоније Суботић</small></li><li class="">(М6.01) Очигледна топологија са применама: 0 (без рачунара)<br><small class="asistenti">Асистенти: Антоније Суботић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d6&#39;)">
+    <td>7. 3. 2026.</td>
+    <td>9h</td>
+    <td>133</td>
+    <td>133</td>
+    <td>0</td>
+    <td><ol><li>Ђорђе Коцић</li><li>Стефан Митровић</li><li>Петар Милосављевић</li></ol></td>
+    <td><ol></ol></td>
+    <td><ol><li>Иван Ћурић</li><li>Маша Миливојевић</li></ol></td>
+</tr>
+<tr id="d6" class="detail-row" style="display: none;">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М120) Линеарна алгебра и аналитичка геометрија: 71 (без рачунара)<br><small class="asistenti">Асистенти: Ђорђе Коцић, Петар Милосављевић</small></li><li class="bez_racunara">(М1.02) Увод у математичку логику: 54 (без рачунара)<br><small class="asistenti">Асистенти: Стефан Митровић</small></li><li class="bez_racunara">(М1.05) Дискретна математика: 8 (без рачунара)<br><small class="asistenti">Асистенти: Стефан Митровић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d7&#39;)">
+    <td>7. 3. 2026.</td>
+    <td>13h</td>
+    <td>111</td>
+    <td>44</td>
+    <td>67</td>
+    <td><ol><li>Лука Петковић</li><li>Душан Дробњак</li></ol></td>
+    <td><ol><li>Марија Ристић</li><li>Милан Митрески</li></ol></td>
+    <td><ol><li>Јован Рајшић</li></ol></td>
+</tr>
+<tr id="d7" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(Р275) Истраживање података 2: 50 (рачунари)<br><small class="asistenti">Асистенти: Марија Ристић</small></li><li class="bez_racunara">(М2.06) Диференцијалне једначине А: 15 (без рачунара)<br><small class="asistenti">Асистенти: Душан Дробњак</small></li><li class="bez_racunara">(М2.06С) Диференцијалне једначине и динамички системи: 15 (без рачунара)<br><small class="asistenti">Асистенти: Лука Петковић</small></li><li class="racunari">(Р374Б) Истраживање података 2: 8 (рачунари)<br><small class="asistenti">Асистенти: Марија Ристић</small></li><li class="racunari">(НР1.02) Дизајн и анализа алгоритама: 7 (рачунари)<br><small class="asistenti">Асистенти: Милан Митрески</small></li><li class="bez_racunara">(15-М2.23) Диференцијалне једначине: 5 (без рачунара)<br><small class="asistenti">Асистенти: Лука Петковић</small></li><li class="bez_racunara">(М2.16) Дистрибуције и парцијалне једначине А: 4 (без рачунара)<br><small class="asistenti">Асистенти: Лука Петковић</small></li><li class="bez_racunara">(М2.23) Диференцијалне једначине са применама: 4 (без рачунара)<br><small class="asistenti">Асистенти: Лука Петковић</small></li><li class="racunari">(РМ18) Алгоритми и структуре података: 2 (рачунари)<br><small class="asistenti">Асистенти: Милан Митрески</small></li><li class="bez_racunara">(М2.27) Једначине математичке физике: 1 (без рачунара)<br><small class="asistenti">Асистенти: Лука Петковић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d8&#39;)">
+    <td>7. 3. 2026.</td>
+    <td>17h</td>
+    <td>77</td>
+    <td>42</td>
+    <td>35</td>
+    <td><ol><li>Никола Вучић</li><li>Мирјана Вељовић</li></ol></td>
+    <td><ol><li>Дара Милојковић</li><li>Лука Перовић</li><li>Иван Ристовић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d8" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(Р347) Верификација софтвера: 31 (рачунари)<br><small class="asistenti">Асистенти: Иван Ристовић</small></li><li class="bez_racunara">(МС5.01) Увод у вероватноћу: 20 (без рачунара)<br><small class="asistenti">Асистенти: Мирјана Вељовић</small></li><li class="bez_racunara">(С1.01) Увод у финансијску математику: 19 (без рачунара)<br><small class="asistenti">Асистенти: Никола Вучић</small></li><li class="racunari">(НМ6.01) Елементи статистичког учења: 4 (рачунари)<br><small class="asistenti">Асистенти: Лука Перовић</small></li><li class="bez_racunara">(2М5.03) Одабрана поглавља математичке статистике: 3 (без рачунара)<br><small class="asistenti">Асистенти: Мирјана Вељовић</small></li><li class="">(О21) Историја и филозофија рачунарства: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Сташа Вујичић Станковић</i></small></li><li class="">(M5.13) Линеарни статистички модели: 0 (рачунари)<br><small class="asistenti">Асистенти: —</small></li><li class="">(О22) Рачунарство и друштво: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Сана Стојановић Ђурђевић</i></small></li><li class="">(РМ05) Методика наставе рачунарства и информатике: 0 (рачунари)<br><small class="asistenti">Асистенти: Дара Милојковић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d9&#39;)">
+    <td>9. 3. 2026.</td>
+    <td>9h</td>
+    <td>84</td>
+    <td>53</td>
+    <td>31</td>
+    <td><ol><li>Антоније Суботић</li></ol></td>
+    <td><ol><li>Димитрије Рађеновић</li><li>Андрија Урошевић</li><li>Огњен Милинковић</li></ol></td>
+    <td><ol><li>Јован Аризановић</li></ol></td>
+</tr>
+<tr id="d9" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М113) Анализа 3: 53 (без рачунара)<br><small class="asistenti">Асистенти: Антоније Суботић</small></li><li class="racunari">(15-Р220) Увод у организацију и архитектуру рачунара 2: 17 (рачунари)<br><small class="asistenti">Асистенти: Димитрије Рађеновић, Огњен Милинковић</small></li><li class="racunari">(Р220) Увод у организацију и архитектуру рачунара: 12 (рачунари)<br><small class="asistenti">Асистенти: Димитрије Рађеновић, Огњен Милинковић</small></li><li class="racunari">(Р265) Увод у интерактивно доказивање теорема: 2 (рачунари)<br><small class="asistenti">Асистенти: Андрија Урошевић</small></li><li class="">(М2.22) Одабрана поглавља анализе Б: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Владимир Божин</i></small></li><li class="">(НМ2.07) Векторска анализа и теорија поља: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александра Маринковић</i></small></li><li class="">(М2.22А) Одабрана поглавља анализе: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Петар Мелентијевић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d10&#39;)">
+    <td>9. 3. 2026.</td>
+    <td>13h</td>
+    <td>39</td>
+    <td>8</td>
+    <td>31</td>
+    <td><ol><li>Душан Дробњак</li></ol></td>
+    <td><ol><li>Анђела Дамњановић</li><li>Ђурђа Милошевић</li><li>Милица Карличић</li><li>Страхиња Станојевић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d10" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(РМ04) Објектно оријентисано програмирање: 25 (рачунари)<br><small class="asistenti">Асистенти: Ђурђа Милошевић, Анђела Дамњановић, Милица Карличић</small></li><li class="racunari">(Р241) Конструкција компилатора: 6 (рачунари)<br><small class="asistenti">Асистенти: Страхиња Станојевић</small></li><li class="bez_racunara">(М2.08) Диференцијалне једначине Б: 5 (без рачунара)<br><small class="asistenti">Асистенти: Душан Дробњак</small></li><li class="bez_racunara">(15-М2.17) Дистрибуције и парцијалне једначине Б: 1 (без рачунара)<br><small class="asistenti">Асистенти: Душан Дробњак</small></li><li class="bez_racunara">(М2.20) Увод у теорију динамичких система: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Душан Јоксимовић</i></small></li><li class="bez_racunara">(15-М2.28) Парцијалне једначине: 1 (без рачунара)<br><small class="asistenti">Асистенти: Душан Дробњак</small></li><li class="">(М2.17) Дистрибуције и парцијалне једначине Б: 0 (без рачунара)<br><small class="asistenti">Асистенти: Душан Дробњак</small></li><li class="">(М2.28) Парцијалне једначине: 0 (без рачунара)<br><small class="asistenti">Асистенти: Душан Дробњак</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d11&#39;)">
+    <td>9. 3. 2026.</td>
+    <td>17h</td>
+    <td>81</td>
+    <td>14</td>
+    <td>67</td>
+    <td><ol></ol></td>
+    <td><ol><li>Милица Карличић</li><li>Милан Митрески</li><li>Денис Аличић</li><li>Марко Спасић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d11" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(РМ13) Увод у релационе базе података: 31 (рачунари)<br><small class="asistenti">Асистенти: Милан Митрески</small></li><li class="racunari">(Р260) Вештачка интелигенција: 27 (рачунари)<br><small class="asistenti">Асистенти: Денис Аличић, Марко Спасић</small></li><li class="bez_racunara">(ОМ12) Методологија научног и стручног рада: 14 (без рачунара)<br><small class="asistenti">Асистенти: <i>Милена Вујошевић Јаничић</i></small></li><li class="racunari">(РМ11) Компилација програмских језика: 9 (рачунари)<br><small class="asistenti">Асистенти: Милица Карличић</small></li><li class="">(2РМЛ3) Вештачка интелигенција: 0 (рачунари)<br><small class="asistenti">Асистенти: Денис Аличић, Марко Спасић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d12&#39;)">
+    <td>10. 3. 2026.</td>
+    <td>9h</td>
+    <td>29</td>
+    <td>0</td>
+    <td>29</td>
+    <td><ol></ol></td>
+    <td><ol><li>Стефан Малбашић</li><li>Лука Перовић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d12" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(М5.09) Статистички софтвер 3: 15 (рачунари)<br><small class="asistenti">Асистенти: Лука Перовић</small></li><li class="racunari">(М5.04) Статистички софтвер 1: 14 (рачунари)<br><small class="asistenti">Асистенти: Стефан Малбашић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d13&#39;)">
+    <td>10. 3. 2026.</td>
+    <td>13h</td>
+    <td>87</td>
+    <td>43</td>
+    <td>44</td>
+    <td><ol><li>Данијел Ђорђевић</li><li>Јован Аризановић</li><li>Лука Перовић</li><li>Вук Симон Оваскаинен</li><li>Иван Ћурић</li><li>Јелена Илић</li><li>Михаило Крстић</li></ol></td>
+    <td><ol></ol></td>
+    <td><ol><li>Маша Миливојевић</li><li>Бојана Пуртић</li></ol></td>
+</tr>
+<tr id="d13" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(П099) Увод у информатику: 44 (рачунари)<br><small class="asistenti">Асистенти: <i>Данијела Симић</i></small></li><li class="bez_racunara">(М114) Анализа 4: 17 (без рачунара)<br><small class="asistenti">Асистенти: Вук Симон Оваскаинен</small></li><li class="bez_racunara">(М6.02) Топологија А: 9 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Миладиновић</i></small></li><li class="bez_racunara">(2М2.08) Одабрана поглавља глобалне анализе: 4 (без рачунара)<br><small class="asistenti">Асистенти: <i>Дарко Милинковић</i></small></li><li class="bez_racunara">(М5.17) Теорија информације: 4 (без рачунара)<br><small class="asistenti">Асистенти: Лука Перовић</small></li><li class="bez_racunara">(М2.11) Одабрана поглавља анализе А: 3 (без рачунара)<br><small class="asistenti">Асистенти: <i>Бобан Карапетровић</i></small></li><li class="bez_racunara">(М2.03Б) Анализа 2Б: 2 (без рачунара)<br><small class="asistenti">Асистенти: Јелена Илић</small></li><li class="bez_racunara">(15-М5.17) Теорија информације: 2 (без рачунара)<br><small class="asistenti">Асистенти: Лука Перовић</small></li><li class="bez_racunara">(М6.04) Алгебарска топологија: 2 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Миладиновић</i></small></li><li class="">(М2.01) Анализа 1: 0 (без рачунара)<br><small class="asistenti">Асистенти: Јелена Илић, Јован Аризановић, Вук Симон Оваскаинен, Михаило Крстић</small></li><li class="">(15-М2.01) Анализа 1: 0 (без рачунара)<br><small class="asistenti">Асистенти: Јелена Илић, Јован Аризановић, Вук Симон Оваскаинен, Михаило Крстић</small></li><li class="">(М2.03а) Анализа 2А: 0 (без рачунара)<br><small class="asistenti">Асистенти: —</small></li><li class="">(М2.03) Анализа 2: 0 (без рачунара)<br><small class="asistenti">Асистенти: Данијел Ђорђевић, Иван Ћурић, <i>Милан Перић</i>, <i>Срђан Стефановић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d14&#39;)">
+    <td>10. 3. 2026.</td>
+    <td>17h</td>
+    <td>186</td>
+    <td>124</td>
+    <td>62</td>
+    <td><ol><li>Антоније Суботић</li><li>Лука Петковић</li><li>Наташа Павлов</li><li>Вук Симон Оваскаинен</li></ol></td>
+    <td><ol><li>Стефан Капунац</li><li>Иван Дрецун</li></ol></td>
+    <td><ol><li>Никола Вучић</li><li>Зора Голубовић</li></ol></td>
+</tr>
+<tr id="d14" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М112) Анализа 2: 89 (без рачунара)<br><small class="asistenti">Асистенти: Антоније Суботић, Вук Симон Оваскаинен, Лука Петковић</small></li><li class="racunari">(Р269) Рачунарска интелигенција: 54 (рачунари)<br><small class="asistenti">Асистенти: Стефан Капунац</small></li><li class="bez_racunara">(М2.10) Увод у теоријску механику: 33 (без рачунара)<br><small class="asistenti">Асистенти: Лука Петковић, Наташа Павлов</small></li><li class="racunari">(Р306) Аутоматско резоновање: 8 (рачунари)<br><small class="asistenti">Асистенти: Иван Дрецун</small></li><li class="bez_racunara">(М2.09) Методика наставе математике Б: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Златко Лазовић</i></small></li><li class="bez_racunara">(НМ3.05) Математичке методе класичне механике: 1 (без рачунара)<br><small class="asistenti">Асистенти: Лука Петковић</small></li><li class="">(2М2.01) Методика наставе анализе са школском праксом: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Златко Лазовић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d15&#39;)">
+    <td>11. 3. 2026.</td>
+    <td>9h</td>
+    <td>10</td>
+    <td>6</td>
+    <td>4</td>
+    <td><ol><li>Јелена Марковић</li><li>Павле Павловић</li></ol></td>
+    <td><ol><li>Михајло Србакоски</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d15" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(О44) Зететика: 3 (без рачунара)<br><small class="asistenti">Асистенти: <i>Сташа Вујичић Станковић</i></small></li><li class="racunari">(М5.12) Статистички софтвер 4: 3 (рачунари)<br><small class="asistenti">Асистенти: Михајло Србакоски</small></li><li class="bez_racunara">(2М5.042) Основи економије финансија и рачуноводства: 2 (без рачунара)<br><small class="asistenti">Асистенти: <i>Милутин Живановић</i></small></li><li class="racunari">(М5.07) Статистички софтвер 2: 1 (рачунари)<br><small class="asistenti">Асистенти: Михајло Србакоски</small></li><li class="bez_racunara">(О42) Енглески језик 2: 1 (без рачунара)<br><small class="asistenti">Асистенти: Павле Павловић</small></li><li class="">(О301) Управљање пројектима у индустрији и науци: 0 (без рачунара)<br><small class="asistenti">Асистенти: Јелена Марковић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d16&#39;)">
+    <td>11. 3. 2026.</td>
+    <td>13h</td>
+    <td>81</td>
+    <td>30</td>
+    <td>51</td>
+    <td><ol><li>Лука Петковић</li><li>Матија Миловић</li><li>Михаило Крстић</li><li>Маша Миливојевић</li></ol></td>
+    <td><ol><li>Матија Лојовић</li><li>Андрија Урошевић</li><li>Страхиња Станојевић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d16" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(Р210) Конструкција и анализа алгоритама: 51 (рачунари)<br><small class="asistenti">Асистенти: Андрија Урошевић, Матија Лојовић, Страхиња Станојевић</small></li><li class="bez_racunara">(М2.07) Теорија мере и интеграције: 17 (без рачунара)<br><small class="asistenti">Асистенти: <i>Срђан Стефановић</i></small></li><li class="bez_racunara">(М2.24) Функционална анализа: 7 (без рачунара)<br><small class="asistenti">Асистенти: Маша Миливојевић</small></li><li class="bez_racunara">(М2.26) Анализа 3Б: 3 (без рачунара)<br><small class="asistenti">Асистенти: Михаило Крстић</small></li><li class="bez_racunara">(М2.14) Анализа 3Б: 2 (без рачунара)<br><small class="asistenti">Асистенти: Матија Миловић</small></li><li class="bez_racunara">(М2.30) Анализа 3Б: 1 (без рачунара)<br><small class="asistenti">Асистенти: Михаило Крстић</small></li><li class="">(М2.21) Математичке методе методе квантне механике: 0 (без рачунара)<br><small class="asistenti">Асистенти: Лука Петковић</small></li><li class="">(2М8.01) Математички методи механике: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александра Маринковић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d17&#39;)">
+    <td>11. 3. 2026.</td>
+    <td>17h</td>
+    <td>110</td>
+    <td>2</td>
+    <td>108</td>
+    <td><ol><li>Душан Богојевић</li></ol></td>
+    <td><ol><li>Милан Чугуровић</li><li>Анђела Дамњановић</li><li>Владимир Кузмановић</li><li>Милан Митрески</li><li>Иван Дрецун</li><li>Дара Милојковић</li><li>Иван Ристовић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d17" class="detail-row" style="display: none;">
+    <td colspan="8">
+        <ul><li class="racunari">(Р231) Рачунарске мреже: 67 (рачунари)<br><small class="asistenti">Асистенти: Милан Митрески</small></li><li class="racunari">(15-Р245) Програмске парадигме: 18 (рачунари)<br><small class="asistenti">Асистенти: Иван Ристовић, Милан Чугуровић</small></li><li class="racunari">(РМ12) Програмске парадигме: 13 (рачунари)<br><small class="asistenti">Асистенти: Анђела Дамњановић</small></li><li class="racunari">(РМ17) Рачунарске мреже: 6 (рачунари)<br><small class="asistenti">Асистенти: Милан Митрески</small></li><li class="racunari">(15-РМ06) Методика наставе рачунаства Б: 2 (рачунари)<br><small class="asistenti">Асистенти: Владимир Кузмановић</small></li><li class="bez_racunara">(М107) Дискретне структуре 3: 2 (без рачунара)<br><small class="asistenti">Асистенти: Душан Богојевић</small></li><li class="racunari">(2РМЛ2) Програмске парадигме: 1 (рачунари)<br><small class="asistenti">Асистенти: Дара Милојковић</small></li><li class="racunari">(Р312) Криптографија: 1 (рачунари)<br><small class="asistenti">Асистенти: Иван Дрецун</small></li><li class="">(РМ06) Методика наставе програмирања: 0 (рачунари)<br><small class="asistenti">Асистенти: Владимир Кузмановић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d18&#39;)">
+    <td>12. 3. 2026.</td>
+    <td>9h</td>
+    <td>138</td>
+    <td>51</td>
+    <td>87</td>
+    <td><ol><li>Стефан Малбашић</li><li>Мирјана Вељовић</li></ol></td>
+    <td><ol><li>Бојана Јошић</li><li>Лука Перовић</li><li>Мирјана Вељовић</li></ol></td>
+    <td><ol><li>Ђурђа Милошевић</li><li>Маша Миливојевић</li></ol></td>
+</tr>
+<tr id="d18" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(Р270) Релационе базе података: 70 (рачунари)<br><small class="asistenti">Асистенти: Бојана Јошић</small></li><li class="bez_racunara">(М5.01) Вероватноћа и статистика А: 51 (без рачунара)<br><small class="asistenti">Асистенти: Мирјана Вељовић, Стефан Малбашић</small></li><li class="racunari">(М5.08) Теорија узорака: 15 (рачунари)<br><small class="asistenti">Асистенти: Мирјана Вељовић</small></li><li class="racunari">(М165) Увод у теорију узорака: 2 (рачунари)<br><small class="asistenti">Асистенти: Лука Перовић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d19&#39;)">
+    <td>12. 3. 2026.</td>
+    <td>13h</td>
+    <td>183</td>
+    <td>101</td>
+    <td>82</td>
+    <td><ol><li>Марко Тошић</li><li>Урош Динић</li><li>Наташа Павлов</li></ol></td>
+    <td><ol><li>Милица Карличић</li><li>Денис Аличић</li><li>Бојана Јошић</li><li>Владимир Кузмановић</li><li>Иван Ристовић</li></ol></td>
+    <td><ol><li>Ђорђе Мијовић</li></ol></td>
+</tr>
+<tr id="d19" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М105) Дискретне структуре 1: 78 (без рачунара)<br><small class="asistenti">Асистенти: Марко Тошић, Урош Динић</small></li><li class="racunari">(П102) Објектно оријентисано програмирање: 67 (рачунари)<br><small class="asistenti">Асистенти: Бојана Јошић, Денис Аличић, Милица Карличић</small></li><li class="racunari">(Р390) Развој софтвера 2: 13 (рачунари)<br><small class="asistenti">Асистенти: Иван Ристовић</small></li><li class="bez_racunara">(НМ1.05) Увод у теорију бројева и комбинаторику: 10 (без рачунара)<br><small class="asistenti">Асистенти: <i>Илија Врећица</i></small></li><li class="bez_racunara">(АМ02) Одабрана поглавља астрономије: 9 (без рачунара)<br><small class="asistenti">Асистенти: Наташа Павлов</small></li><li class="racunari">(2РМЛ1) Методика наставе рачунарства 2: 2 (рачунари)<br><small class="asistenti">Асистенти: Владимир Кузмановић</small></li><li class="bez_racunara">(АМ01) Увод у астрономију: 2 (без рачунара)<br><small class="asistenti">Асистенти: —</small></li><li class="bez_racunara">(М1.16) Елементарна теорија бројева: 2 (без рачунара)<br><small class="asistenti">Асистенти: <i>Илија Врећица</i></small></li><li class="">(НАМ01) Увод у астрономију и астрофизику: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Станислав Милошевић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d20&#39;)">
+    <td>12. 3. 2026.</td>
+    <td>17h</td>
+    <td>215</td>
+    <td>117</td>
+    <td>98</td>
+    <td><ol><li>Едвард Габријел Етински</li><li>Матеј Милићевић</li><li>Стефан Митровић</li><li>Далибор Даниловић</li></ol></td>
+    <td><ol><li>Јелена Марковић</li><li>Александар Стефановић</li><li>Петар Ђорђевић</li></ol></td>
+    <td><ol><li>Димитрије Рађеновић</li></ol></td>
+</tr>
+<tr id="d20" class="detail-row" style="display: none;">
+    <td colspan="8">
+        <ul><li class="racunari">(Р290) Развој софтвера: 80 (рачунари)<br><small class="asistenti">Асистенти: Александар Стефановић, Петар Ђорђевић</small></li><li class="bez_racunara">(М1.17) Математичка логика у рачунарству: 26 (без рачунара)<br><small class="asistenti">Асистенти: Стефан Митровић</small></li><li class="bez_racunara">(15-М140) Алгебра 1: 25 (без рачунара)<br><small class="asistenti">Асистенти: Едвард Габријел Етински, <i>Илија Врећица</i></small></li><li class="bez_racunara">(М1.041) Алгебра 1: 20 (без рачунара)<br><small class="asistenti">Асистенти: Матеј Милићевић</small></li><li class="bez_racunara">(М1.04Р) Алгебра 1: 15 (без рачунара)<br><small class="asistenti">Асистенти: Стефан Митровић</small></li><li class="racunari">(Р313) Геометријски алгоритми: 14 (рачунари)<br><small class="asistenti">Асистенти: Јелена Марковић</small></li><li class="bez_racunara">(М1.06М) Алгебра 2: 11 (без рачунара)<br><small class="asistenti">Асистенти: Далибор Даниловић</small></li><li class="bez_racunara">(М1.06) Алгебра 2: 10 (без рачунара)<br><small class="asistenti">Асистенти: Далибор Даниловић, <i>Илија Врећица</i></small></li><li class="bez_racunara">(М1.04) Алгебра 1: 6 (без рачунара)<br><small class="asistenti">Асистенти: <i>Илија Врећица</i>, Матеј Милићевић, Стефан Митровић</small></li><li class="bez_racunara">(М1.06Р) Алгебра 2: 4 (без рачунара)<br><small class="asistenti">Асистенти: <i>Илија Врећица</i></small></li><li class="racunari">(РМ15) Архитектура рачунара 1: 4 (рачунари)<br><small class="asistenti">Асистенти: Јелена Марковић</small></li><li class="">(М1.06Л) Алгебра 2: 0 (без рачунара)<br><small class="asistenti">Асистенти: —</small></li><li class="">(М1.122) Одабрана поглавља алгебре: 0 (без рачунара)<br><small class="asistenti">Асистенти: Далибор Даниловић</small></li><li class="">(М1.06С) Алгебра 2: 0 (без рачунара)<br><small class="asistenti">Асистенти: Далибор Даниловић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d21&#39;)">
+    <td>13. 3. 2026.</td>
+    <td>9h</td>
+    <td>89</td>
+    <td>89</td>
+    <td>0</td>
+    <td><ol><li>Јелена Тасић</li><li>Павле Павловић</li><li>Бојана Пуртић</li><li>Кристина Ивановић</li></ol></td>
+    <td><ol></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d21" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М106) Дискретне структуре 2: 20 (без рачунара)<br><small class="asistenti">Асистенти: Јелена Тасић, Кристина Ивановић</small></li><li class="bez_racunara">(М2.31С) Комплексна анализа: 17 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(М2.31) Комплексне функције: 13 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(М2.13) Комплексна анализа А: 11 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(15-М2.31) Комплексне функције: 9 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(15-М2.31С) Комплексна анализа: 7 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(С2.01) Страни језик: 2 (без рачунара)<br><small class="asistenti">Асистенти: Павле Павловић</small></li><li class="bez_racunara">(2М7.03) Аналитичке мeтоде у елементарној математици са методиком: 2 (без рачунара)<br><small class="asistenti">Асистенти: <i>Миљан Кнежевић</i></small></li><li class="bez_racunara">(15-М2.05) Увод у комплексну анализу: 2 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(М4.06) Теорија игара са применама: 2 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александар Јовић</i></small></li><li class="bez_racunara">(М118) Увод у комплексну анализу: 1 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(М2.19) Геометријска теорија функција 1: 1 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(М2.05) Увод у комплексну анализу: 1 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li><li class="bez_racunara">(М2.15) Комплексна анализа Б: 1 (без рачунара)<br><small class="asistenti">Асистенти: Бојана Пуртић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d22&#39;)">
+    <td>13. 3. 2026.</td>
+    <td>13h</td>
+    <td>159</td>
+    <td>9</td>
+    <td>150</td>
+    <td><ol><li>Јована Костић</li><li>Кристина Ивановић</li></ol></td>
+    <td><ol><li>Јелена Тасић</li><li>Дамјан Станковић</li><li>Кристина Ивановић</li><li>Јована Костић</li><li>Душан Богојевић</li></ol></td>
+    <td><ol><li>Јован Рајшић</li></ol></td>
+</tr>
+<tr id="d22" class="detail-row" style="display: none;">
+    <td colspan="8">
+        <ul><li class="racunari">(15-М150) Увод у нумеричку математику: 110 (рачунари)<br><small class="asistenti">Асистенти: Јелена Тасић, Јована Костић, Дамјан Станковић</small></li><li class="racunari">(М4.01) Увод у нумеричку математику: 40 (рачунари)<br><small class="asistenti">Асистенти: Јована Костић, Дамјан Станковић, Душан Богојевић, Кристина Ивановић</small></li><li class="bez_racunara">(2М4.091) Метахеуристичке методе: 3 (без рачунара)<br><small class="asistenti">Асистенти: Кристина Ивановић</small></li><li class="bez_racunara">(М180) Основе математичког моделирања: 3 (без рачунара)<br><small class="asistenti">Асистенти: <i>Зорица Дражић</i></small></li><li class="bez_racunara">(М4.12) Основе математичког моделирања: 2 (без рачунара)<br><small class="asistenti">Асистенти: <i>Зорица Дражић</i></small></li><li class="bez_racunara">(М4.15) Нумеричка анализа 2Б: 1 (без рачунара)<br><small class="asistenti">Асистенти: Јована Костић</small></li><li class="">(М4.09) Нумеричка анализа 1Б: 0 (рачунари)<br><small class="asistenti">Асистенти: <i>Зорица Дражић</i></small></li><li class="">(НМ1.07) Увод у математичко моделирање и програмирање: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александра Делић</i></small></li><li class="">(НМ4.09) Хеуристичке методе: 0 (без рачунара)<br><small class="asistenti">Асистенти: Кристина Ивановић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d23&#39;)">
+    <td>13. 3. 2026.</td>
+    <td>17h</td>
+    <td>48</td>
+    <td>38</td>
+    <td>10</td>
+    <td><ol><li>Ана Меркле</li><li>Стефан Малбашић</li><li>Роберт Дожа</li></ol></td>
+    <td><ol><li>Бојана Тодић</li><li>Јелена Марковић</li><li>Роберт Дожа</li><li>Стефан Капунац</li><li>Стефан Миленковић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d23" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М5.02) Вероватноћа и статистика Б: 27 (без рачунара)<br><small class="asistenti">Асистенти: Стефан Малбашић</small></li><li class="bez_racunara">(М5.06) Случајни процеси: 7 (без рачунара)<br><small class="asistenti">Асистенти: Ана Меркле</small></li><li class="racunari">(Р246) Функционално програмирање: 7 (рачунари)<br><small class="asistenti">Асистенти: Стефан Капунац</small></li><li class="bez_racunara">(2М5.05) Одабрана поглавља случајних процеса: 4 (без рачунара)<br><small class="asistenti">Асистенти: <i>Ана Меркле</i></small></li><li class="racunari">(М5.19) Елементи финансијске математике: 2 (рачунари)<br><small class="asistenti">Асистенти: Бојана Тодић</small></li><li class="racunari">(Р376) Истраживање података у биоинформатици: 1 (рачунари)<br><small class="asistenti">Асистенти: Јелена Марковић</small></li><li class="">(Р181) Скрипт програмирање: 0 (рачунари)<br><small class="asistenti">Асистенти: Роберт Дожа, Стефан Миленковић</small></li><li class="">(НР1.03) Скрипт програмирање: 0 (без рачунара)<br><small class="asistenti">Асистенти: Роберт Дожа</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d24&#39;)">
+    <td>14. 3. 2026.</td>
+    <td>9h</td>
+    <td>222</td>
+    <td>72</td>
+    <td>150</td>
+    <td><ol><li>Кристина Мићић</li></ol></td>
+    <td><ol><li>Бојана Тодић</li><li>Луција Миличић</li><li>Петар Ђорђевић</li><li>Анђела Дамњановић</li><li>Матија Лојовић</li><li>Стефан Малбашић</li></ol></td>
+    <td><ol><li>Јелена Илић</li><li>Иван Ћурић</li></ol></td>
+</tr>
+<tr id="d24" class="detail-row" style="display: none;">
+    <td colspan="8">
+        <ul><li class="racunari">(15-Р292) Алати за развој софтвера: 57 (рачунари)<br><small class="asistenti">Асистенти: Петар Ђорђевић</small></li><li class="bez_racunara">(М3.02) Основи геометрије: 55 (без рачунара)<br><small class="asistenti">Асистенти: <i>Катарина Лукић</i>, Кристина Мићић</small></li><li class="racunari">(П100) Увод у програмирање: 53 (рачунари)<br><small class="asistenti">Асистенти: Анђела Дамњановић, Луција Миличић, Матија Лојовић</small></li><li class="racunari">(М5.11) Временске серије и примене у финансијама: 22 (рачунари)<br><small class="asistenti">Асистенти: Стефан Малбашић</small></li><li class="bez_racunara">(15-М3.02) Геометрија 2: 17 (без рачунара)<br><small class="asistenti">Асистенти: <i>Катарина Лукић</i>, Кристина Мићић</small></li><li class="racunari">(2М5.02) Животно осигурање: 7 (рачунари)<br><small class="asistenti">Асистенти: Бојана Тодић</small></li><li class="racunari">(РМ08) Дизајн програмских језика: 6 (рачунари)<br><small class="asistenti">Асистенти: <i>Петар Ђорђевић</i></small></li><li class="racunari">(15-П100) Програмирање 1: 5 (рачунари)<br><small class="asistenti">Асистенти: Анђела Дамњановић, Луција Миличић, Матија Лојовић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d25&#39;)">
+    <td>14. 3. 2026.</td>
+    <td>13h</td>
+    <td>161</td>
+    <td>77</td>
+    <td>84</td>
+    <td><ol><li>Едвард Габријел Етински</li><li>Дара Милојковић</li><li>Ђорђе Коцић</li><li>Милан Павловић</li></ol></td>
+    <td><ol><li>Владимир Кузмановић</li><li>Милица Карличић</li><li>Стефан Миленковић</li></ol></td>
+    <td><ol><li>Јован Рајшић</li></ol></td>
+</tr>
+<tr id="d25" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(Р240) Превођење програмских језика: 84 (рачунари)<br><small class="asistenti">Асистенти: Владимир Кузмановић, Милица Карличић, Стефан Миленковић</small></li><li class="bez_racunara">(М131) Геометрија: 54 (без рачунара)<br><small class="asistenti">Асистенти: Едвард Габријел Етински, <i>Тијана Шукиловић</i></small></li><li class="bez_racunara">(М3.04) Пројективна геометрија са применама у рачунарству: 10 (без рачунара)<br><small class="asistenti">Асистенти: Милан Павловић</small></li><li class="bez_racunara">(Р392) Информациони системи: 9 (без рачунара)<br><small class="asistenti">Асистенти: Дара Милојковић</small></li><li class="bez_racunara">(2М3.01) Методика наставе геометрије са школском праксом: 2 (без рачунара)<br><small class="asistenti">Асистенти: <i>Милош Ђорић</i></small></li><li class="bez_racunara">(М3.08) Диференцијална геометрија: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Владица Андрејић</i></small></li><li class="bez_racunara">(М3.06) Одабрана поглавља геометрије А: 1 (без рачунара)<br><small class="asistenti">Асистенти: Ђорђе Коцић</small></li><li class="">(М3.05) Методика наставе математике Ц: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Милош Ђорић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d26&#39;)">
+    <td>14. 3. 2026.</td>
+    <td>17h</td>
+    <td>156</td>
+    <td>20</td>
+    <td>136</td>
+    <td><ol><li>Стефан Митровић</li></ol></td>
+    <td><ol><li>Јована Костић</li><li>Јелена Марковић</li><li>Стефан Миленковић</li><li>Милан Коцић</li><li>Огњен Милинковић</li></ol></td>
+    <td><ol><li>Данијел Ђорђевић</li><li>Јован Аризановић</li></ol></td>
+</tr>
+<tr id="d26" class="detail-row" style="display: none;">
+    <td colspan="8">
+        <ul><li class="racunari">(РМ01) Програмирање 1: 93 (рачунари)<br><small class="asistenti">Асистенти: Милан Коцић, Огњен Милинковић</small></li><li class="racunari">(Р310) Конструкција и анализа алгоритама 2: 31 (рачунари)<br><small class="asistenti">Асистенти: Јелена Марковић</small></li><li class="racunari">(РМ10) Лексичка анализа: 11 (рачунари)<br><small class="asistenti">Асистенти: Стефан Миленковић</small></li><li class="bez_racunara">(М1.101) Теорија израчунљивости: 10 (без рачунара)<br><small class="asistenti">Асистенти: Стефан Митровић</small></li><li class="bez_racunara">(Р219) Теорија израчунљивости: 6 (без рачунара)<br><small class="asistenti">Асистенти: Стефан Митровић</small></li><li class="bez_racunara">(М1.07) Методика наставе математике А: 3 (без рачунара)<br><small class="asistenti">Асистенти: <i>Маја Рославцев</i></small></li><li class="bez_racunara">(2М1.01) Методика наставе алгебре и математичке логике са школском праксом: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Маја Рославцев</i></small></li><li class="racunari">(М4.13) Нумеричка анализа 2А: 1 (рачунари)<br><small class="asistenti">Асистенти: Јована Костић</small></li><li class="">(М1.18) Теорија алгоритама: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Александра Костић Матијевић</i></small></li><li class="">(М1.08) Теорија бројева 1: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Горан Ђанковић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d27&#39;)">
+    <td>16. 3. 2026.</td>
+    <td>9h</td>
+    <td>108</td>
+    <td>60</td>
+    <td>48</td>
+    <td><ol><li>Павле Касом</li><li>Данијел Ђорђевић</li><li>Наташа Павлов</li><li>Душан Дробњак</li></ol></td>
+    <td><ol><li>Дара Милојковић</li><li>Александар Стефановић</li><li>Роберт Дожа</li><li>Димитрије Рађеновић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d27" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М111) Анализа 1: 55 (без рачунара)<br><small class="asistenti">Асистенти: Данијел Ђорђевић, Павле Касом</small></li><li class="racunari">(РМ02) Програмирање 2: 31 (рачунари)<br><small class="asistenti">Асистенти: Александар Стефановић, Дара Милојковић, Димитрије Рађеновић</small></li><li class="racunari">(Р272) Програмирање база података: 10 (рачунари)<br><small class="asistenti">Асистенти: Роберт Дожа</small></li><li class="racunari">(РМ16) Програмирање база података: 7 (рачунари)<br><small class="asistenti">Асистенти: Роберт Дожа</small></li><li class="bez_racunara">(О62) Основи механике: 4 (без рачунара)<br><small class="asistenti">Асистенти: Наташа Павлов</small></li><li class="bez_racunara">(О61) Основи астрономије: 1 (без рачунара)<br><small class="asistenti">Асистенти: Наташа Павлов</small></li><li class="">(2М2.20) Увод у теорију Морса: 0 (без рачунара)<br><small class="asistenti">Асистенти: Душан Дробњак</small></li><li class="">(НМ2.05) Увод у неглатку анализу: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Душан Јоксимовић</i></small></li><li class="">(НМ2.01) Напредни концепти анализе 1: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Биљана Вујошевић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d28&#39;)">
+    <td>16. 3. 2026.</td>
+    <td>13h</td>
+    <td>80</td>
+    <td>27</td>
+    <td>53</td>
+    <td><ol><li>Матеј Милићевић</li><li>Лука Перовић</li><li>Мирјана Вељовић</li><li>Далибор Даниловић</li></ol></td>
+    <td><ol><li>Тамара Стефановић</li><li>Михајло Србакоски</li><li>Лука Перовић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d28" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(М162) Статистика: 46 (рачунари)<br><small class="asistenti">Асистенти: Михајло Србакоски, Тамара Стефановић</small></li><li class="bez_racunara">(М5.05) Математичка статистика: 14 (без рачунара)<br><small class="asistenti">Асистенти: Мирјана Вељовић</small></li><li class="racunari">(МС5.02) Увод у статистику: 7 (рачунари)<br><small class="asistenti">Асистенти: Лука Перовић</small></li><li class="bez_racunara">(15-М1.09) Историја и филозофија математике: 6 (без рачунара)<br><small class="asistenti">Асистенти: <i>Зоран Петровић</i></small></li><li class="bez_racunara">(М141) Алгебра 2: 3 (без рачунара)<br><small class="asistenti">Асистенти: Далибор Даниловић</small></li><li class="bez_racunara">(М1.13) Алгебра 3: 2 (без рачунара)<br><small class="asistenti">Асистенти: Матеј Милићевић</small></li><li class="bez_racunara">(М1.12) Одабрана поглавља алгебре и математичке логике: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Славко Моцоња</i></small></li><li class="bez_racunara">(НМ3.03) Увод у комутативну алгебру: 1 (без рачунара)<br><small class="asistenti">Асистенти: Далибор Даниловић</small></li><li class="">(М1.121) Одабрана поглавља математичке логике: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Славко Моцоња</i></small></li><li class="">(М1.09) Историја и филозофија математике: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Зоран Петровић</i></small></li><li class="">(2М7.02) Методологија истраживања у настави математике: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Горан Ђанковић</i></small></li><li class="">(2М5.15) Стохастички модели у операционим истраживањима: 0 (без рачунара)<br><small class="asistenti">Асистенти: Лука Перовић</small></li><li class="">(М1.11) Заснивање математике: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Небојша Икодиновић</i></small></li><li class="">(НМ1.09) Полиноми и алгебарске једначине: 0 (без рачунара)<br><small class="asistenti">Асистенти: Далибор Даниловић</small></li><li class="">(НМ3.09) Увод у рачунарску алгебру: 0 (без рачунара)<br><small class="asistenti">Асистенти: —</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d29&#39;)">
+    <td>16. 3. 2026.</td>
+    <td>17h</td>
+    <td>19</td>
+    <td>1</td>
+    <td>18</td>
+    <td><ol></ol></td>
+    <td><ol><li>Јелена Тасић</li><li>Луција Миличић</li><li>Дамјан Станковић</li><li>Душан Богојевић</li></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d29" class="detail-row">
+    <td colspan="8">
+        <ul><li class="racunari">(Р363) Машинско учење: 8 (рачунари)<br><small class="asistenti">Асистенти: Луција Миличић</small></li><li class="racunari">(М4.07) Нумеричка анализа 1А: 7 (рачунари)<br><small class="asistenti">Асистенти: <i>Зорица Дражић</i></small></li><li class="racunari">(М4.04) Нумеричке методе: 3 (рачунари)<br><small class="asistenti">Асистенти: Јелена Тасић, Дамјан Станковић</small></li><li class="bez_racunara">(О1.03) Психологија: 1 (без рачунара)<br><small class="asistenti">Асистенти: <i>Драгица Павловић-Бабић</i></small></li><li class="">(М4.14) Методе математичког програмирања: 0 (рачунари)<br><small class="asistenti">Асистенти: Душан Богојевић</small></li><li class="">(НР2.01) Машинско учење: 0 (рачунари)<br><small class="asistenti">Асистенти: <i>-</i></small></li><li class="">(М4.142) Нелинеарно програмирање: 0 (рачунари)<br><small class="asistenti">Асистенти: Душан Богојевић</small></li><li class="">(Р104) Увод у теоријско рачунарство: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Милан Банковић</i></small></li><li class="">(С1.08Б) Психологија: 0 (без рачунара)<br><small class="asistenti">Асистенти: <i>Драгица Павловић-Бабић</i></small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d30&#39;)">
+    <td>17. 3. 2026.</td>
+    <td>9h</td>
+    <td>157</td>
+    <td>157</td>
+    <td>0</td>
+    <td><ol><li>Тамара Стефановић</li><li>Павле Павловић</li><li>Михајло Србакоски</li></ol></td>
+    <td><ol></ol></td>
+    <td><ol><li>Никола Вучић</li></ol></td>
+</tr>
+<tr id="d30" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М161) Вероватноћа: 131 (без рачунара)<br><small class="asistenti">Асистенти: Михајло Србакоски, Тамара Стефановић</small></li><li class="bez_racunara">(О41) Енглески језик 1: 11 (без рачунара)<br><small class="asistenti">Асистенти: Павле Павловић</small></li><li class="bez_racunara">(О45) Техничко и научно писање: 10 (без рачунара)<br><small class="asistenti">Асистенти: <i>Јелена Граовац</i></small></li><li class="bez_racunara">(М5.10) Елементи актуарске математике: 5 (без рачунара)<br><small class="asistenti">Асистенти: Тамара Стефановић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d31&#39;)">
+    <td>17. 3. 2026.</td>
+    <td>13h</td>
+    <td>70</td>
+    <td>70</td>
+    <td>0</td>
+    <td><ol><li>Анђела Дамњановић</li><li>Александар Стефановић</li><li>Матија Миловић</li><li>Михаило Крстић</li></ol></td>
+    <td><ol></ol></td>
+    <td><ol></ol></td>
+</tr>
+<tr id="d31" class="detail-row">
+    <td colspan="8">
+        <ul><li class="bez_racunara">(М2.29) Анализа 3А: 37 (без рачунара)<br><small class="asistenti">Асистенти: Михаило Крстић</small></li><li class="bez_racunara">(Р273) Пројектовање база података: 15 (без рачунара)<br><small class="asistenti">Асистенти: Александар Стефановић, Анђела Дамњановић</small></li><li class="bez_racunara">(М2.12) Анализа 3А: 11 (без рачунара)<br><small class="asistenti">Асистенти: Матија Миловић</small></li><li class="bez_racunara">(М2.25) Анализа 3А: 7 (без рачунара)<br><small class="asistenti">Асистенти: Михаило Крстић</small></li></ul>
+    </td>
+</tr>
+
+<tr class="main-row" onclick="toggle(&#39;d32&#39;)">
+    <td>17. 3. 2026.</td>
+    <td>17h</td>
+    <td>179</td>
+    <td>0</td>
+    <td>179</td>
+    <td><ol></ol></td>
+    <td><ol><li>Владимир Кузмановић</li><li>Филип Видојевић</li></ol></td>
+    <td><ol><li>Огњен Милинковић</li><li>Петар Милосављевић</li><li>Јелена Илић</li><li>Марко Тошић</li></ol></td>
+</tr>
+<tr id="d32" class="detail-row" style="display: none;">
+    <td colspan="8">
+        <ul><li class="racunari">(Р225) Оперативни системи: 125 (рачунари)<br><small class="asistenti">Асистенти: Владимир Кузмановић, Филип Видојевић</small></li><li class="racunari">(РМ14) Оперативни системи: 41 (рачунари)<br><small class="asistenti">Асистенти: Филип Видојевић</small></li><li class="racunari">(Р308) Научно израчунавање: 6 (рачунари)<br><small class="asistenti">Асистенти: Филип Видојевић</small></li><li class="racunari">(М4.03) Образовни софтвер: 4 (рачунари)<br><small class="asistenti">Асистенти: Владимир Кузмановић</small></li><li class="racunari">(НР1.05) Оперативни системи и рачунарске мреже: 2 (рачунари)<br><small class="asistenti">Асистенти: Филип Видојевић</small></li><li class="racunari">(2РМЛМ1) Образовни софтвер са практикумом: 1 (рачунари)<br><small class="asistenti">Асистенти: Владимир Кузмановић</small></li></ul>
+    </td>
+</tr>
+</tbody></table><p style="text-align:center"><b>Укупно пријављених испита:</b> 3539</p><h2>Број дежурстава</h2><table><tbody><tr><th>Име и презиме</th><th>Децембарски рок</th><th>Колоквијуми</th><th>Јануарски рок</th><th>Текући рок</th><th>Укупно</th></tr><tr><td>Лука Перовић</td><td>1</td><td>3</td><td>6</td><td><b>6</b></td><td><b>16</b></td></tr><tr><td>Јована Костић</td><td>1</td><td>6</td><td>4</td><td><b>4</b></td><td><b>15</b></td></tr><tr><td>Милан Митрески</td><td>2</td><td>5</td><td>4</td><td><b>4</b></td><td><b>15</b></td></tr><tr><td>Дара Милојковић</td><td>2</td><td>0</td><td>6</td><td><b>6</b></td><td><b>14</b></td></tr><tr><td>Роберт Дожа</td><td>2</td><td>1</td><td>6</td><td><b>5</b></td><td><b>14</b></td></tr><tr><td>Кристина Мићић</td><td>4</td><td>5</td><td>2</td><td><b>2</b></td><td><b>13</b></td></tr><tr><td>Невена Ћирић</td><td>3</td><td>4</td><td>4</td><td><b>2</b></td><td><b>13</b></td></tr><tr><td>Ђорђе Коцић</td><td>1</td><td>3</td><td>4</td><td><b>4</b></td><td><b>12</b></td></tr><tr><td>Стефан Малбашић</td><td>1</td><td>3</td><td>4</td><td><b>4</b></td><td><b>12</b></td></tr><tr><td>Антоније Суботић</td><td>2</td><td>1</td><td>4</td><td><b>4</b></td><td><b>11</b></td></tr><tr><td>Анђела Дамњановић</td><td>2</td><td>1</td><td>4</td><td><b>4</b></td><td><b>11</b></td></tr><tr><td>Мирјана Вељовић</td><td>2</td><td>0</td><td>5</td><td><b>4</b></td><td><b>11</b></td></tr><tr><td>Андрија Урошевић</td><td>2</td><td>2</td><td>3</td><td><b>3</b></td><td><b>10</b></td></tr><tr><td>Наташа Павлов</td><td>3</td><td>0</td><td>4</td><td><b>3</b></td><td><b>10</b></td></tr><tr><td>Јелена Марковић</td><td>1</td><td>0</td><td>4</td><td><b>4</b></td><td><b>9</b></td></tr><tr><td>Владимир Кузмановић</td><td>1</td><td>0</td><td>4</td><td><b>4</b></td><td><b>9</b></td></tr><tr><td>Дамјан Станковић</td><td>1</td><td>3</td><td>3</td><td><b>2</b></td><td><b>9</b></td></tr><tr><td>Душан Богојевић</td><td>1</td><td>2</td><td>3</td><td><b>3</b></td><td><b>9</b></td></tr><tr><td>Маша Миливојевић</td><td>0</td><td>2</td><td>3</td><td><b>4</b></td><td><b>9</b></td></tr><tr><td>Милица Карличић</td><td>1</td><td>0</td><td>4</td><td><b>4</b></td><td><b>9</b></td></tr><tr><td>Стефан Капунац</td><td>2</td><td>0</td><td>4</td><td><b>3</b></td><td><b>9</b></td></tr><tr><td>Страхиња Станојевић</td><td>2</td><td>0</td><td>4</td><td><b>3</b></td><td><b>9</b></td></tr><tr><td>Александар Стефановић</td><td>2</td><td>0</td><td>3</td><td><b>3</b></td><td><b>8</b></td></tr><tr><td>Едвард Габријел Етински</td><td>0</td><td>2</td><td>3</td><td><b>3</b></td><td><b>8</b></td></tr><tr><td>Кристина Ивановић</td><td>0</td><td>0</td><td>4</td><td><b>4</b></td><td><b>8</b></td></tr><tr><td>Луција Миличић</td><td>2</td><td>0</td><td>3</td><td><b>3</b></td><td><b>8</b></td></tr><tr><td>Милан Павловић</td><td>1</td><td>1</td><td>3</td><td><b>3</b></td><td><b>8</b></td></tr><tr><td>Михаило Крстић</td><td>1</td><td>0</td><td>4</td><td><b>3</b></td><td><b>8</b></td></tr><tr><td>Михајло Србакоски</td><td>2</td><td>0</td><td>3</td><td><b>3</b></td><td><b>8</b></td></tr><tr><td>Павле Касом</td><td>1</td><td>1</td><td>3</td><td><b>3</b></td><td><b>8</b></td></tr><tr><td>Тамара Стефановић</td><td>2</td><td>2</td><td>2</td><td><b>2</b></td><td><b>8</b></td></tr><tr><td>Урош Динић</td><td>0</td><td>2</td><td>3</td><td><b>3</b></td><td><b>8</b></td></tr><tr><td>Јелена Тасић</td><td>1</td><td>0</td><td>3</td><td><b>3</b></td><td><b>7</b></td></tr><tr><td>Бојана Јошић</td><td>0</td><td>0</td><td>4</td><td><b>3</b></td><td><b>7</b></td></tr><tr><td>Димитрије Рађеновић</td><td>0</td><td>0</td><td>3</td><td><b>4</b></td><td><b>7</b></td></tr><tr><td>Душан Дробњак</td><td>1</td><td>0</td><td>3</td><td><b>3</b></td><td><b>7</b></td></tr><tr><td>Иван Ристовић</td><td>0</td><td>0</td><td>4</td><td><b>3</b></td><td><b>7</b></td></tr><tr><td>Лука Петковић</td><td>0</td><td>1</td><td>3</td><td><b>3</b></td><td><b>7</b></td></tr><tr><td>Марија Ристић</td><td>0</td><td>2</td><td>3</td><td><b>2</b></td><td><b>7</b></td></tr><tr><td>Матија Лојовић</td><td>0</td><td>0</td><td>3</td><td><b>4</b></td><td><b>7</b></td></tr><tr><td>Огњен Милинковић</td><td>1</td><td>0</td><td>3</td><td><b>3</b></td><td><b>7</b></td></tr><tr><td>Петар Ђорђевић</td><td>1</td><td>1</td><td>3</td><td><b>2</b></td><td><b>7</b></td></tr><tr><td>Стефан Миленковић</td><td>1</td><td>0</td><td>3</td><td><b>3</b></td><td><b>7</b></td></tr><tr><td>Стефан Митровић</td><td>1</td><td>0</td><td>3</td><td><b>3</b></td><td><b>7</b></td></tr><tr><td>Бојана Тодић</td><td>0</td><td>2</td><td>2</td><td><b>2</b></td><td><b>6</b></td></tr><tr><td>Вук Симон Оваскаинен</td><td>1</td><td>0</td><td>3</td><td><b>2</b></td><td><b>6</b></td></tr><tr><td>Далибор Даниловић</td><td>1</td><td>0</td><td>3</td><td><b>2</b></td><td><b>6</b></td></tr><tr><td>Денис Аличић</td><td>1</td><td>0</td><td>3</td><td><b>2</b></td><td><b>6</b></td></tr><tr><td>Зора Голубовић</td><td>1</td><td>4</td><td>0</td><td><b>1</b></td><td><b>6</b></td></tr><tr><td>Марко Спасић</td><td>1</td><td>0</td><td>3</td><td><b>2</b></td><td><b>6</b></td></tr><tr><td>Марко Тошић</td><td>0</td><td>0</td><td>3</td><td><b>3</b></td><td><b>6</b></td></tr><tr><td>Матија Миловић</td><td>0</td><td>0</td><td>3</td><td><b>3</b></td><td><b>6</b></td></tr><tr><td>Милан Коцић</td><td>1</td><td>0</td><td>3</td><td><b>2</b></td><td><b>6</b></td></tr><tr><td>Филип Видојевић</td><td>1</td><td>0</td><td>4</td><td><b>1</b></td><td><b>6</b></td></tr><tr><td>Ђурђа Милошевић</td><td>0</td><td>0</td><td>2</td><td><b>3</b></td><td><b>5</b></td></tr><tr><td>Јелена Илић</td><td>0</td><td>0</td><td>2</td><td><b>3</b></td><td><b>5</b></td></tr><tr><td>Јован Аризановић</td><td>0</td><td>1</td><td>1</td><td><b>3</b></td><td><b>5</b></td></tr><tr><td>Јован Рајшић</td><td>0</td><td>0</td><td>2</td><td><b>3</b></td><td><b>5</b></td></tr><tr><td>Бојана Пуртић</td><td>0</td><td>1</td><td>2</td><td><b>2</b></td><td><b>5</b></td></tr><tr><td>Данијел Ђорђевић</td><td>1</td><td>0</td><td>1</td><td><b>3</b></td><td><b>5</b></td></tr><tr><td>Иван Ћурић</td><td>0</td><td>0</td><td>2</td><td><b>3</b></td><td><b>5</b></td></tr><tr><td>Иван Дрецун</td><td>1</td><td>0</td><td>2</td><td><b>2</b></td><td><b>5</b></td></tr><tr><td>Матеј Милићевић</td><td>0</td><td>0</td><td>3</td><td><b>2</b></td><td><b>5</b></td></tr><tr><td>Никола Вучић</td><td>0</td><td>0</td><td>0</td><td><b>4</b></td><td><b>4</b></td></tr><tr><td>Петар Милосављевић</td><td>0</td><td>0</td><td>2</td><td><b>2</b></td><td><b>4</b></td></tr><tr><td>Ђорђе Мијовић</td><td>1</td><td>0</td><td>1</td><td><b>1</b></td><td><b>3</b></td></tr><tr><td>Милан Чугуровић</td><td>1</td><td>0</td><td>1</td><td><b>1</b></td><td><b>3</b></td></tr><tr><td>Милица Јовановић</td><td>3</td><td>0</td><td>0</td><td><b>0</b></td><td><b>3</b></td></tr><tr><td>Милоје Јоксимовић</td><td>2</td><td>0</td><td>1</td><td><b>0</b></td><td><b>3</b></td></tr><tr><td>Павле Павловић</td><td>0</td><td>0</td><td>0</td><td><b>3</b></td><td><b>3</b></td></tr><tr><td>Ана Петровић</td><td>0</td><td>0</td><td>2</td><td><b>0</b></td><td><b>2</b></td></tr><tr><td>Винка Дакић</td><td>0</td><td>0</td><td>1</td><td><b>1</b></td><td><b>2</b></td></tr><tr><td>Александар Миладиновић</td><td>0</td><td>1</td><td>0</td><td><b>0</b></td><td><b>1</b></td></tr><tr><td>Ана Меркле</td><td>0</td><td>0</td><td>0</td><td><b>1</b></td><td><b>1</b></td></tr><tr><td>Катарина Лукић</td><td>1</td><td>0</td><td>0</td><td><b>0</b></td><td><b>1</b></td></tr><tr><td>Милан Перић</td><td>1</td><td>0</td><td>0</td><td><b>0</b></td><td><b>1</b></td></tr><tr><td>Срђан Стефановић</td><td>1</td><td>0</td><td>0</td><td><b>0</b></td><td><b>1</b></td></tr><tr><td>Станислав Милошевић</td><td>1</td><td>0</td><td>0</td><td><b>0</b></td><td><b>1</b></td></tr><tr><td>Марјана Глигоријевић</td><td>0</td><td>0</td><td>0</td><td><b>0</b></td><td><b>0</b></td></tr></tbody></table><p>Ажурирано: 04.03.2026 у 06:00</p>
+
+
+</body></html>
