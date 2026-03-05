@@ -57,7 +57,9 @@ function formatSrDate(input) {
 // Parsiranje CSV fajla
 function parseCSV(csvText) {
     return csvText.trim().split('\n').map(line => {
-        const [sifra,predmet,broj_studenata,dan,sat,katedra,grupa,semestar,akreditacija,racunari,ispravan_semestar,smerovi,lokacija] = line.split('\t');
+	console.log(line);
+        const [sifra,predmet,broj_studenata,dan,sat,katedra,grupa,semestar,akreditacija,racunari,ispravan_semestar,smerovi,lokacija] = line.split(',');
+	console.log(dan, sat)
         return {
             grupa: grupa.trim() + " (" + akreditacija.trim() + ")",
             predmet: predmet.trim() + (smerovi ? (" (" + smerovi.split("").map(x => "М"+x).join(", ") + ")") : ""),
